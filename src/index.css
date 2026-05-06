@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cream: #F5F0EB;
+  --color-cream-dark: #EDE6DD;
+  --color-clay: #C4A882;
+  --color-clay-dark: #A68B6B;
+  --color-stone: #8A8680;
+  --color-charcoal: #2C2C2C;
+  --color-charcoal-light: #454545;
+  --color-forest: #3B5249;
+  --color-forest-light: #4A6B5E;
+  --color-offwhite: #FAF8F5;
+  --color-warm-black: #1A1A18;
+  --color-overlay: rgba(26, 26, 24, 0.85);
+
+  --font-serif: 'DM Serif Display', serif;
+  --font-sans: 'Inter', sans-serif;
+}
+
+/* Base styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-charcoal);
+  background-color: var(--color-cream);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-cream);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-stone);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-clay-dark);
+}
+
+/* Selection */
+::selection {
+  background: var(--color-clay);
+  color: var(--color-offwhite);
+}
+
+/* Image loading placeholder shimmer */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.img-placeholder {
+  background: linear-gradient(
+    90deg,
+    var(--color-cream-dark) 25%,
+    var(--color-cream) 50%,
+    var(--color-cream-dark) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+}
