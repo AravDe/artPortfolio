@@ -7,7 +7,7 @@ export default function Process() {
   return (
     <section
       id="process"
-      className="py-24 sm:py-32 lg:py-40 bg-cream"
+      className="py-24 sm:py-32 lg:py-40 bg-cream/95 backdrop-blur-sm"
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">

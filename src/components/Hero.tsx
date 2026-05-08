@@ -2,10 +2,10 @@ import { motion } from 'framer-motion';
 import { useManifest } from '../hooks/useManifest';
 
 export default function Hero() {
-  const { images } = useManifest('background');
+  const { images } = useManifest('hero');
   
   // Use the background image if available, else fallback to dark gray
-  const bgImage = images.length > 0 ? `/background/${images[0]}` : null;
+  const bgImage = images.length > 0 ? `/hero/${images[0]}` : null;
 
   return (
     <section id="hero" className="relative h-screen w-full overflow-hidden">

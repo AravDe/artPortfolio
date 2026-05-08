@@ -39,7 +39,7 @@ export default function Collections() {
       <section id="collections" className="py-0">
 
         {/* Subsection 3A: Treadle Mugs */}
-        <div className="py-24 sm:py-32 bg-offwhite">
+        <div className="py-24 sm:py-32 bg-offwhite/95 backdrop-blur-sm">
           <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
             <ScrollReveal>
               <div className="max-w-2xl mb-12 sm:mb-16">
@@ -77,7 +77,7 @@ export default function Collections() {
         </div>
 
         {/* Subsection 3B: Vases */}
-        <div className="py-24 sm:py-32 bg-cream">
+        <div className="py-24 sm:py-32 bg-cream/95 backdrop-blur-sm">
           <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
             <ScrollReveal>
               <div className="max-w-2xl mb-12 sm:mb-16">
@@ -115,7 +115,7 @@ export default function Collections() {
         </div>
 
         {/* Subsection 3C: Indian Cha-er Bhad */}
-        <div className="py-24 sm:py-32 bg-offwhite">
+        <div className="py-24 sm:py-32 bg-offwhite/95 backdrop-blur-sm">
           <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
             <ScrollReveal>
               <div className="max-w-2xl mb-12 sm:mb-16">

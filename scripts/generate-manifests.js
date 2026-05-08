@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 
-const folders = ['mugs', 'vases', 'chai', 'process', 'about', 'background'];
+const folders = ['mugs', 'vases', 'chai', 'process', 'about', 'hero', 'site-background'];
 const assetsDir = path.resolve(process.cwd(), 'assets');
 
 console.log('Generating image manifests...');

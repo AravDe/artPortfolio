@@ -6,7 +6,7 @@ export default function About() {
   const portraitImage = images.length > 0 ? `/about/${images[0]}` : null;
 
   return (
-    <section id="about" className="py-24 sm:py-32 lg:py-40 bg-cream">
+    <section id="about" className="py-24 sm:py-32 lg:py-40 bg-cream/95 backdrop-blur-sm">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <div className="flex flex-col lg:flex-row-reverse gap-12 lg:gap-20 items-center lg:items-start">
           
