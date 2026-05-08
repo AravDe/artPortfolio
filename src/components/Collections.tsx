@@ -24,7 +24,7 @@ export default function Collections() {
     setLightboxIndex((prev) =>
       prev !== null ? (prev + 1) % lightboxImages.length : null
     );
-  }, []);
+  }, [lightboxImages.length]);
 
   const goPrev = useCallback(() => {
     setLightboxIndex((prev) =>
@@ -32,17 +32,17 @@ export default function Collections() {
         ? (prev - 1 + lightboxImages.length) % lightboxImages.length
         : null
     );
-  }, []);
+  }, [lightboxImages.length]);
 
   return (
     <>
       <section id="collections" className="py-0">
 
         {/* Subsection 3A: Treadle Mugs */}
-        <div className="py-24 sm:py-32 bg-offwhite/95 backdrop-blur-sm">
+        <div className="py-24 sm:py-32 bg-transparent">
           <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
             <ScrollReveal>
-              <div className="max-w-2xl mb-12 sm:mb-16">
+              <div className="max-w-2xl mb-12 sm:mb-16 bg-offwhite/85 backdrop-blur-md p-6 sm:p-10 rounded-2xl shadow-sm border border-stone/10">
                 <h3 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-charcoal leading-tight">
                   Treadle Mugs
                 </h3>
@@ -77,10 +77,10 @@ export default function Collections() {
         </div>
 
         {/* Subsection 3B: Vases */}
-        <div className="py-24 sm:py-32 bg-cream/95 backdrop-blur-sm">
+        <div className="py-24 sm:py-32 bg-transparent">
           <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
             <ScrollReveal>
-              <div className="max-w-2xl mb-12 sm:mb-16">
+              <div className="max-w-2xl mb-12 sm:mb-16 bg-cream/85 backdrop-blur-md p-6 sm:p-10 rounded-2xl shadow-sm border border-stone/10">
                 <h3 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-charcoal leading-tight">
                   Vases
                 </h3>
@@ -115,10 +115,10 @@ export default function Collections() {
         </div>
 
         {/* Subsection 3C: Indian Cha-er Bhad */}
-        <div className="py-24 sm:py-32 bg-offwhite/95 backdrop-blur-sm">
+        <div className="py-24 sm:py-32 bg-transparent">
           <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
             <ScrollReveal>
-              <div className="max-w-2xl mb-12 sm:mb-16">
+              <div className="max-w-2xl mb-12 sm:mb-16 bg-offwhite/85 backdrop-blur-md p-6 sm:p-10 rounded-2xl shadow-sm border border-stone/10">
                 <h3 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-charcoal leading-tight flex flex-col gap-2">
                   <span>Cha-er Bhad</span>
                   <span className="text-xl sm:text-2xl text-stone font-light tracking-wide">The Indian Tea Cup</span>

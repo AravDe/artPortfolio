@@ -6,7 +6,7 @@ export default function About() {
   const portraitImage = images.length > 0 ? `/about/${images[0]}` : null;
 
   return (
-    <section id="about" className="py-24 sm:py-32 lg:py-40 bg-cream/95 backdrop-blur-sm">
+    <section id="about" className="py-24 sm:py-32 lg:py-40 bg-transparent">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <div className="flex flex-col lg:flex-row-reverse gap-12 lg:gap-20 items-center lg:items-start">
           
@@ -33,8 +33,9 @@ export default function About() {
           {/* Text content */}
           <div className="w-full lg:w-7/12">
             <ScrollReveal direction="left" delay={0.15}>
-              <p className="text-sm font-light tracking-widest uppercase text-stone mb-3">
-                About the Potter
+              <div className="bg-cream/85 backdrop-blur-md p-6 sm:p-10 rounded-2xl shadow-sm border border-stone/10">
+                <p className="text-sm font-light tracking-widest uppercase text-stone mb-3">
+                  About the Potter
               </p>
               <h2 className="font-serif text-4xl sm:text-5xl text-charcoal leading-tight">
                 Arav
@@ -98,6 +99,7 @@ export default function About() {
                   </a>
                 </div>
               </div>
+            </div>
             </ScrollReveal>
           </div>
         </div>

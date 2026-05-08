@@ -7,14 +7,14 @@ export default function Process() {
   return (
     <section
       id="process"
-      className="py-24 sm:py-32 lg:py-40 bg-cream/95 backdrop-blur-sm"
+      className="py-24 sm:py-32 lg:py-40 bg-transparent"
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
           
           {/* Text Content - Studio Journal Entry */}
           <ScrollReveal direction="up">
-            <div className="max-w-2xl">
+            <div className="max-w-2xl bg-cream/85 backdrop-blur-md p-6 sm:p-10 rounded-2xl shadow-sm border border-stone/10">
               <p className="text-sm font-light tracking-widest uppercase text-stone mb-3">
                 My Process
               </p>

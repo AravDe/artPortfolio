@@ -12,7 +12,7 @@ export default function SiteBackground() {
       <img
         src={bgImage}
         alt="Site background"
-        className="w-full h-full object-cover opacity-30" 
+        className="w-full h-full object-cover opacity-70" 
       />
     </div>
   );
