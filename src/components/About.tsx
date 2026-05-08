@@ -42,7 +42,7 @@ export default function About() {
                 </h2>
                 <div className="mt-8 space-y-6 text-lg text-stone leading-relaxed font-light">
                   <p>
-                    I'm Arav. I'm originally from the city of Kolkata, India, and I am currently
+                    I'm originally from the city of Kolkata, India, and I am currently
                     based out of Buffalo, New York.
                   </p>
                   <p>
