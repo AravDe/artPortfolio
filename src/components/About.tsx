@@ -72,7 +72,7 @@ export default function About() {
                 {/* Contact */}
                 <div className="mt-12 flex flex-col sm:flex-row items-start sm:items-center gap-6">
                   <a
-                    href="mailto:hello@aravde.com"
+                    href="mailto:aravde2004@gmail.com"
                     className="inline-flex items-center gap-3 px-6 py-3 bg-charcoal text-offwhite text-sm tracking-widest uppercase font-light rounded-md hover:bg-charcoal-light transition-colors duration-300"
                   >
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -85,7 +85,7 @@ export default function About() {
                   {/* Social icons */}
                   <div className="flex items-center gap-4">
                     <a
-                      href="https://instagram.com"
+                      href="https://instagram.com/arav.ed"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-stone hover:text-clay transition-colors duration-300"
