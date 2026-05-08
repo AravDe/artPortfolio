@@ -3,7 +3,7 @@ import { useManifest } from '../hooks/useManifest';
 
 export default function Hero() {
   const { images } = useManifest('hero');
-  
+
   // Use the background image if available, else fallback to dark gray
   const bgImage = images.length > 0 ? `/hero/${images[0]}` : null;
 
