@@ -46,7 +46,7 @@ export default function About() {
                     based out of Buffalo, New York.
                   </p>
                   <p>
-                    Growing up in India, handmade objects weren't luxuries — they were woven into the
+                    Growing up in India, handmade objects weren't luxuries, they were woven into the
                     fabric of everyday life. From the unglazed clay cups used to drink chai at train
                     stations to the water pots in village homes, pottery was functional, communal,
                     and deeply connected to the earth.

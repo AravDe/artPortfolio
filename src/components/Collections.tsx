@@ -48,7 +48,7 @@ export default function Collections() {
                 </h3>
                 <p className="mt-4 text-base sm:text-lg text-stone leading-relaxed font-light">
                   These are functional, everyday mugs thrown entirely on the treadle wheel.
-                  Each one carries the subtle irregularities and fingerprints of handwork —
+                  Each one carries the subtle irregularities and fingerprints of handwork,
                   no two are identical. Made to be held, used, and loved daily.
                 </p>
               </div>
@@ -124,7 +124,7 @@ export default function Collections() {
                   <span className="text-xl sm:text-2xl text-stone font-light tracking-wide">The Indian Tea Cup</span>
                 </h3>
                 <p className="mt-4 text-base sm:text-lg text-stone leading-relaxed font-light">
-                  The Cha-er Bhad is the traditional Bengali and Indian earthen tea cup —
+                  The Cha-er Bhad is the traditional Bengali and Indian earthen tea cup,
                   unglazed, raw, and deeply tied to the culture of chai on street corners
                   and railway platforms. These pieces are a direct homage to that tradition,
                   made with the same reverence for simplicity and the earth.
