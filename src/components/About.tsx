@@ -1,49 +1,75 @@
 import ScrollReveal from './ScrollReveal';
+import { useManifest } from '../hooks/useManifest';
 
 export default function About() {
+  const { images } = useManifest('about');
+  const portraitImage = images.length > 0 ? `/about/${images[0]}` : null;
+
   return (
-    <section id="about" className="py-24 sm:py-32 lg:py-40 bg-offwhite">
+    <section id="about" className="py-24 sm:py-32 lg:py-40 bg-cream">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          {/* Image */}
-          <ScrollReveal direction="left">
-            <div className="overflow-hidden rounded-lg">
-              <img
-                src="/process/DSC_6692.jpg"
-                alt="Arav De working at the pottery wheel"
-                className="w-full h-auto object-cover"
-                loading="lazy"
-              />
-            </div>
-          </ScrollReveal>
+        <div className="flex flex-col lg:flex-row-reverse gap-12 lg:gap-20 items-center lg:items-start">
+          
+          {/* Portrait Image */}
+          <div className="w-full lg:w-5/12">
+            <ScrollReveal direction="right">
+              {portraitImage ? (
+                <div className="overflow-hidden rounded-lg aspect-[4/5] w-full">
+                  <img
+                    src={portraitImage}
+                    alt="Arav"
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                </div>
+              ) : (
+                <div className="overflow-hidden rounded-lg aspect-[4/5] w-full bg-offwhite flex items-center justify-center border border-stone/20">
+                  <span className="text-stone/50 font-light tracking-widest text-sm uppercase">Portrait</span>
+                </div>
+              )}
+            </ScrollReveal>
+          </div>
 
           {/* Text content */}
-          <ScrollReveal direction="right" delay={0.15}>
-            <div>
+          <div className="w-full lg:w-7/12">
+            <ScrollReveal direction="left" delay={0.15}>
               <p className="text-sm font-light tracking-widest uppercase text-stone mb-3">
-                About
+                About the Potter
               </p>
               <h2 className="font-serif text-4xl sm:text-5xl text-charcoal leading-tight">
-                The Potter
+                Arav
               </h2>
-              <div className="mt-6 space-y-4 text-stone leading-relaxed font-light">
+              <div className="mt-8 space-y-6 text-lg text-stone leading-relaxed font-light">
                 <p>
-                  I'm Arav De, a ceramicist drawn to the quiet rhythm of the
-                  wheel and the unpredictable beauty of the kiln. My work
-                  explores the tension between intention and chance — each piece
-                  shaped by hand, then transformed by fire into something
-                  entirely its own.
+                  I'm Arav. I'm originally from the city of Kolkata, India, and I am currently 
+                  based out of Buffalo, New York.
                 </p>
                 <p>
-                  Inspired by organic forms and natural textures, I create
-                  functional vessels that invite touch and daily use. Every
-                  crack, glaze run, and subtle asymmetry tells the story of
-                  its making.
+                  Growing up in India, handmade objects weren't luxuries — they were woven into the 
+                  fabric of everyday life. From the unglazed clay cups used to drink chai at train 
+                  stations to the water pots in village homes, pottery was functional, communal, 
+                  and deeply connected to the earth. 
                 </p>
+                <p>
+                  Throughout my time at Berea College Student Crafts, I began working on a Treadle 
+                  Wheel. The physical engagement and rhythm of a foot-powered wheel felt incredibly grounding. 
+                  It was here that I started designing new mugs for sale, finding joy in making vessels 
+                  that invite touch and daily use.
+                </p>
+                <p>
+                  Going through the motions of designing and throwing on a more challenging wheel 
+                  this year has been a great learning curve. I'm always looking for more opportunities 
+                  to further my knowledge in Ceramics and create pieces that honor the traditions of 
+                  my roots.
+                </p>
+                
+                <blockquote className="border-l-2 border-clay pl-6 py-2 my-10 italic text-xl text-charcoal font-serif">
+                  "I want what I make to be held, used everyday, and to carry the quiet rhythm of the wheel into someone's home."
+                </blockquote>
               </div>
 
               {/* Contact */}
-              <div className="mt-10 flex flex-col sm:flex-row items-start sm:items-center gap-6">
+              <div className="mt-12 flex flex-col sm:flex-row items-start sm:items-center gap-6">
                 <a
                   href="mailto:hello@aravde.com"
                   className="inline-flex items-center gap-3 px-6 py-3 bg-charcoal text-offwhite text-sm tracking-widest uppercase font-light rounded-md hover:bg-charcoal-light transition-colors duration-300"
@@ -72,8 +98,8 @@ export default function About() {
                   </a>
                 </div>
               </div>
-            </div>
-          </ScrollReveal>
+            </ScrollReveal>
+          </div>
         </div>
       </div>
     </section>

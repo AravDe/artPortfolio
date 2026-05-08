@@ -1,18 +1,27 @@
 import { motion } from 'framer-motion';
+import { useManifest } from '../hooks/useManifest';
 
 export default function Hero() {
+  const { images } = useManifest('background');
+  
+  // Use the background image if available, else fallback to dark gray
+  const bgImage = images.length > 0 ? `/background/${images[0]}` : null;
+
   return (
     <section id="hero" className="relative h-screen w-full overflow-hidden">
       {/* Background image */}
       <div className="absolute inset-0">
-        <img
-          src="/gallery/DSC_7063.jpg"
-          alt="Ceramic artwork by Arav De"
-          className="w-full h-full object-cover"
-        />
-        {/* Gradient overlays */}
-        <div className="absolute inset-0 bg-gradient-to-r from-warm-black/70 via-warm-black/40 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-warm-black/60 via-transparent to-warm-black/30" />
+        {bgImage ? (
+          <img
+            src={bgImage}
+            alt="Ceramic glaze close-up"
+            className="w-full h-full object-cover"
+          />
+        ) : (
+          <div className="w-full h-full bg-warm-black" />
+        )}
+        {/* Dark overlays to ensure text legibility */}
+        <div className="absolute inset-0 bg-warm-black/80 sm:bg-warm-black/70" />
       </div>
 
       {/* Content */}
@@ -22,9 +31,12 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1] }}
         >
-          <h1 className="font-serif text-5xl sm:text-7xl lg:text-8xl text-offwhite leading-tight tracking-wide">
-            Arav De
+          <h1 className="font-serif text-6xl sm:text-7xl lg:text-8xl text-offwhite leading-tight tracking-wide">
+            Arav
           </h1>
+          <p className="mt-2 text-xl sm:text-2xl text-offwhite/70 font-light tracking-wide">
+            Buffalo, New York
+          </p>
         </motion.div>
 
         <motion.div
@@ -32,8 +44,8 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
         >
-          <p className="mt-4 sm:mt-6 text-base sm:text-lg lg:text-xl text-offwhite/80 font-light max-w-md leading-relaxed tracking-wide">
-            Handcrafted ceramics rooted in patience, form, and fire.
+          <p className="mt-6 sm:mt-8 text-lg sm:text-xl lg:text-2xl text-offwhite/80 font-light max-w-2xl leading-relaxed tracking-wide italic">
+            Rooted in the earth, shaped by the rhythm of the treadle wheel.
           </p>
         </motion.div>
 
@@ -41,7 +53,7 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.8 }}
-          className="mt-10"
+          className="mt-12"
         >
           <a
             href="#process"

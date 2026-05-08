@@ -1,7 +1,7 @@
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Process from './components/Process'
-import Gallery from './components/Gallery'
+import Collections from './components/Collections'
 import About from './components/About'
 import Footer from './components/Footer'
 
@@ -11,7 +11,7 @@ export default function App() {
       <Navbar />
       <Hero />
       <Process />
-      <Gallery />
+      <Collections />
       <About />
       <Footer />
     </div>
