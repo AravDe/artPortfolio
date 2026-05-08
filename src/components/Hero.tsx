@@ -45,7 +45,7 @@ export default function Hero() {
           transition={{ duration: 1, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
         >
           <p className="mt-6 sm:mt-8 text-lg sm:text-xl lg:text-2xl text-offwhite/80 font-light max-w-2xl leading-relaxed tracking-wide italic">
-            Rooted in the earth, shaped by the rhythm of the treadle wheel.
+            Rooted in the earth, shaped by the rhythm of the wheel.
           </p>
         </motion.div>
 
