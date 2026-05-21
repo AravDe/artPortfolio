@@ -1,11 +1,40 @@
+import { useState, useCallback } from 'react';
 import ScrollReveal from './ScrollReveal';
+import Lightbox from './Lightbox';
 import { useManifest } from '../hooks/useManifest';
 
 export default function Process() {
   const { images: processImages } = useManifest('process');
 
+  const [lightboxImages, setLightboxImages] = useState<string[]>([]);
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+
+  const openLightbox = useCallback((images: string[], index: number, folder: string) => {
+    setLightboxImages(images.map(img => `/${folder}/${img}`));
+    setLightboxIndex(index);
+  }, []);
+
+  const closeLightbox = useCallback(() => {
+    setLightboxIndex(null);
+  }, []);
+
+  const goNext = useCallback(() => {
+    setLightboxIndex((prev) =>
+      prev !== null ? (prev + 1) % lightboxImages.length : null
+    );
+  }, [lightboxImages.length]);
+
+  const goPrev = useCallback(() => {
+    setLightboxIndex((prev) =>
+      prev !== null
+        ? (prev - 1 + lightboxImages.length) % lightboxImages.length
+        : null
+    );
+  }, [lightboxImages.length]);
+
   return (
-    <section
+    <>
+      <section
       id="process"
       className="py-24 sm:py-32 lg:py-40 bg-transparent"
     >
@@ -51,15 +80,18 @@ export default function Process() {
                 delay={Math.min((index % 4) * 0.1, 0.4)}
                 className={index === 0 ? "col-span-2 aspect-video" : "col-span-1 aspect-square"}
               >
-                <div className="relative block w-full h-full overflow-hidden rounded-lg">
+                <button
+                  onClick={() => openLightbox(processImages, index, 'process')}
+                  className="relative block w-full h-full overflow-hidden rounded-lg group cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-clay focus-visible:ring-offset-2 focus-visible:ring-offset-cream text-left p-0 border-none bg-transparent"
+                >
                   <img
                     src={`/process/${filename}`}
                     alt="Studio process and the treadle wheel"
                     loading="lazy"
-                    className="w-full h-full object-cover transition-transform duration-700 hover:scale-[1.03]"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
                   />
-                  <div className="absolute inset-0 bg-warm-black/0 hover:bg-warm-black/10 transition-colors duration-500 pointer-events-none" />
-                </div>
+                  <div className="absolute inset-0 bg-warm-black/0 group-hover:bg-warm-black/10 transition-colors duration-500 pointer-events-none" />
+                </button>
               </ScrollReveal>
             ))}
           </div>
@@ -67,5 +99,14 @@ export default function Process() {
         </div>
       </div>
     </section>
+
+      <Lightbox
+        images={lightboxImages}
+        currentIndex={lightboxIndex}
+        onClose={closeLightbox}
+        onNext={goNext}
+        onPrev={goPrev}
+      />
+    </>
   );
 }
